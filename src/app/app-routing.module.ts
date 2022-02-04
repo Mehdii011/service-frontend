@@ -25,7 +25,7 @@ const routes: Routes = [
     {path:"",component:ListClientComponent},
     {path:"edit/:id",component:UpdateClientComponent},
     {path:"add",component:AddClientComponent},
-    {path:"detail/:id",component:DetailClientComponent},
+    {path:"detaill/:id",component:DetailClientComponent},
   ]},
   {path:"conseiller",children:[
     {path:"",component:ListConseillerComponent},

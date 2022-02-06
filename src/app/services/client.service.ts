@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,12 @@ import { Injectable } from '@angular/core';
 })
 export class ClientService {
 
-  constructor() { }
+  host2:string="http://localhost:8088"
+
+
+  constructor(public http:HttpClient) { }
+
+  getAll(){
+  return  this.http.get(this.host2+"/clients");
+  }
 }

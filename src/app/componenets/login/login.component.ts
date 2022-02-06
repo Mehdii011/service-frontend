@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
 
       let jwt=res.headers.get('Authorization');
       this.authentificaionService.saveToken(jwt);
-      this.router.navigateByUrl('/register')
-
+      this.router.navigateByUrl('/')
+       console.log(jwt)
     },err=>{
 
       

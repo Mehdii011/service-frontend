@@ -18,6 +18,7 @@ import { UpdateCompteComponent } from './componenets/update-compte/update-compte
 import { UpdateConseillerComponent } from './componenets/update-conseiller/update-conseiller.component';
 import { VersementComponent } from './componenets/versement/versement.component';
 import { VirementComponent } from './componenets/virement/virement.component';
+import {OperationComponent} from "./componenets/operation/operation.component";
 
 const routes: Routes = [
   {path:"",redirectTo:'/clients',pathMatch:'full'},
@@ -40,9 +41,10 @@ const routes: Routes = [
     {path:"detail/:id",component:DetailCompteComponent},
   ]},
   {path:"operation",children:[
-    {path:"virement",component:VirementComponent},
-    {path:"veresement",component:VersementComponent},
-    {path:"retrait",component:RetraitComponent},
+      {path:"",component:OperationComponent},
+      {path:"virement",component:VirementComponent},
+      {path:"versement",component:VersementComponent},
+     {path:"retrait",component:RetraitComponent},
   ]},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},

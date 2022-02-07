@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-operation',
+  selector: 'operation',
   templateUrl: './operation.component.html',
   styleUrls: ['./operation.component.css']
 })

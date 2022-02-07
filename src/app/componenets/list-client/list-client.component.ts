@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from 'src/app/services/client.service';
+import {Client} from "../../model/client";
 
 @Component({
   selector: 'app-list-client',
@@ -7,6 +8,8 @@ import { ClientService } from 'src/app/services/client.service';
   styleUrls: ['./list-client.component.css']
 })
 export class ListClientComponent implements OnInit {
+
+  client:Client[]=[];
 
   constructor(public clientSer:ClientService) { }
 
@@ -16,7 +19,9 @@ export class ListClientComponent implements OnInit {
 
   getClient(){
     this.clientSer.getAll().subscribe(res=>{
-          console.log(res) ;
+
+      this.client=res as Client[]
+          console.log(this.client) ;
 
     })
   }

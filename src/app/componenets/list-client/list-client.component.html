@@ -1,6 +1,14 @@
-<div class="card mt-5">
+<div class="row mt-5" >
+  <div class="col-md-6">
+   <a class="btn btn-success" >
+     <i class="fa fa-plus" > Nouveau Client </i>
+   </a>
+  </div>
+</div>
+
+<div class="card mt-3">
     <div class="card-body">
-        <h4 class="card-title">Title Clients</h4>
+       <h4 class="card-title">List  Clients</h4>
         <table class="table table-striped">
             <thead >
                 <tr>
@@ -14,9 +22,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td scope="row">Mehdi Lakhlifi</td>
-                        <td> casablanca</td>
+                    <tr *ngFor="let c of client">
+                        <td scope="row">{{c.nom}}  {{c.prenom}}</td>
+                        <td> {{c.adresse}}</td>
                         <td>
                             <a href="" class="btn btn-success"><i class="fa fa-info" ></i></a>
                         </td>
@@ -28,21 +36,7 @@
                             <a href="" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td scope="row">Mehdi Lakhlifi</td>
-                        <td> casablanca</td>
-                        <td>
-                            <a href="" class="btn btn-success"><i class="fa fa-info" ></i></a>
-                        </td>
-                        <td>Anas</td>
-                        <td>
-                            <a href="" class="btn btn-info"><i class="fa fa-info" ></i></a>
-                        </td>
-                        <td>
-                            <a href="" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
-                        </td>
-                    </tr>
-                   
+
                 </tbody>
         </table>
     </div>

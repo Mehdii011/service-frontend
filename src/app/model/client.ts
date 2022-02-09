@@ -4,7 +4,12 @@ export interface Client{
     prenom?:string;
     adresse?:string;
     codePostal?:number;
-    comptes?:any;
+    comptes?:[{
+        numeroCompte?:number;
+        solde?:number;
+        dateCreation?:string;
+        decouvert?:number;
+    }];
     cartes?:any;
     ville?:string;
     telephone?:any;

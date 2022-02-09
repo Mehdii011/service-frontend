@@ -44,7 +44,7 @@ const routes: Routes = [
       {path:"",component:OperationComponent},
       {path:"virement",component:VirementComponent},
       {path:"versement",component:VersementComponent},
-     {path:"retrait",component:RetraitComponent},
+     {path:"retrait",component:RetraitComponent}
   ]},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},

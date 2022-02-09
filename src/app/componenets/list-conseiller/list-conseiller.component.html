@@ -1,1 +1,40 @@
-<p>list-conseiller works!</p>
+<div class="row mt-5" >
+    <div class="col-md-6">
+     <a class="btn btn-success" routerLink="/conseiller/add">
+       <i class="fa fa-plus" > Nouveau Conseiller </i>
+     </a>
+    </div>
+  </div>
+  
+  <div class="card mt-3">
+      <div class="card-body">
+         <h4 class="card-title">List  Conseiller</h4>
+          <table class="table table-striped">
+              <thead >
+                  <tr>
+                      <th>Name</th>
+                      <th>Clients</th>
+                      <th>Detail</th>
+                      <th>Update</th>
+  
+                  </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let c of conseiller">
+                          <td scope="row">{{c.nom}}  {{c.prenom}}</td>
+                          <td>
+                            <a href="" class="btn btn-info"><i class="fa fa-info" ></i></a>
+                        </td>
+                          
+                          <td>
+                              <a href="" class="btn btn-info"><i class="fa fa-info" ></i></a>
+                          </td>
+                          <td>
+                              <a href="" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
+                          </td>
+                      </tr>
+  
+                  </tbody>
+          </table>
+      </div>
+  </div>

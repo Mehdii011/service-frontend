@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Conseiller } from 'src/app/model/Coneiller';
 import { ConseillerService } from 'src/app/services/conseiller.service';
 
 @Component({
@@ -8,9 +9,19 @@ import { ConseillerService } from 'src/app/services/conseiller.service';
 })
 export class ListConseillerComponent implements OnInit {
 
-  constructor() { }
+  conseiller:Conseiller[]=[];
+
+  constructor(public conseillerSer:ConseillerService) { }
 
   ngOnInit(): void {
+    this.listConseiller1();
   }
+  
+  listConseiller1(){
+    this.conseillerSer.getAll().subscribe(res=>{
+      return  this.conseiller=res as Conseiller[];
+    })
+  }
+  
 
 }

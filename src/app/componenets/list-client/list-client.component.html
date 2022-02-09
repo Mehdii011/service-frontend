@@ -1,6 +1,6 @@
 <div class="row mt-5" >
   <div class="col-md-6">
-   <a class="btn btn-success" >
+   <a class="btn btn-success" routerLink="/clients/add">
      <i class="fa fa-plus" > Nouveau Client </i>
    </a>
   </div>
@@ -26,7 +26,7 @@
                         <td scope="row">{{c.nom}}  {{c.prenom}}</td>
                         <td> {{c.adresse}}</td>
                         <td>
-                            <a href="" class="btn btn-success"><i class="fa fa-info" ></i></a>
+                            <a routerLink="/compte/detail/{{c.id}}" class="btn btn-success"><i class="fa fa-info" ></i></a>
                         </td>
                         <td>Anas</td>
                         <td>
@@ -34,6 +34,7 @@
                         </td>
                         <td>
                             <a href="" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
+                            
                         </td>
                     </tr>
 

@@ -15,4 +15,13 @@ export class ConseillerService {
   createConseiller(data:any){
    return this.http.post('http://localhost:8088/Employe/createConseiller',data)
   }
+  getConseiller(id:any){
+    return this.http.get('http://localhost:8088/Employe/conseillerById/'+id)
+  }
+  Detele(id:any){
+    return this.http.get('http://localhost:8088/delete/'+id)
+  }
+  update(data:any){
+    return this.http.put('http://localhost:8088/updateConseiller',data)
+  }
 }

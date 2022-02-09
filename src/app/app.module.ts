@@ -24,6 +24,7 @@ import { DetailConseillerComponent } from './componenets/detail-conseiller/detai
 import { DetailCompteComponent } from './componenets/detail-compte/detail-compte.component';
 import { UpdateCompteComponent } from './componenets/update-compte/update-compte.component';
 import { AddCompteComponent } from './componenets/add-compte/add-compte.component';
+import { OperationDetailComponent } from './components/operation-detail/operation-detail.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AddCompteComponent } from './componenets/add-compte/add-compte.componen
     DetailConseillerComponent,
     DetailCompteComponent,
     UpdateCompteComponent,
-    AddCompteComponent
+    AddCompteComponent,
+    OperationDetailComponent
   ],
   imports: [
     BrowserModule,

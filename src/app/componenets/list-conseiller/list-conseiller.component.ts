@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Conseiller } from 'src/app/model/Coneiller';
+import { Router } from '@angular/router';
+import { Conseiller } from 'src/app/model/Conseiller';
 import { ConseillerService } from 'src/app/services/conseiller.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class ListConseillerComponent implements OnInit {
 
   conseiller:Conseiller[]=[];
 
-  constructor(public conseillerSer:ConseillerService) { }
+  constructor(private router:Router,public conseillerSer:ConseillerService) { }
 
   ngOnInit(): void {
     this.listConseiller1();
@@ -21,6 +22,12 @@ export class ListConseillerComponent implements OnInit {
     this.conseillerSer.getAll().subscribe(res=>{
       return  this.conseiller=res as Conseiller[];
     })
+  }
+
+  delete(id:any){
+     this.conseillerSer.Detele(id).subscribe(res=>{
+      this.router.navigateByUrl('/')  
+       })
   }
   
 

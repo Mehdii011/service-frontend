@@ -14,7 +14,6 @@ import { ConseillerService } from 'src/app/services/conseiller.service';
 export class DetailCompteComponent implements OnInit {
   id: any;
   compte:Compte[]=[];
- // comptes: [{ numeroCompte?: number | undefined; solde?: number | undefined; dateCreation?: string | undefined; decouvert?: number | undefined; }] ;
   
 
   constructor(private route:ActivatedRoute,public compteSer:CompteService) { }
@@ -35,5 +34,6 @@ export class DetailCompteComponent implements OnInit {
 
  
   }
+  
 
 }

@@ -13,6 +13,8 @@ export interface Client{
     cartes?:any;
     ville?:string;
     telephone?:any;
+    password?:string;
+
 
 
 }

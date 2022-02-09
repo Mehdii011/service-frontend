@@ -1,4 +1,5 @@
 export interface Conseiller{
+    
     id?:number;
     nom?:string;
     prenom?:string;
@@ -10,6 +11,5 @@ export interface Conseiller{
     cartes?:any;
     ville?:string;
     telephone?:any;
-
 
 }

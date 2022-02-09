@@ -1,1 +1,77 @@
-<p>update-conseiller works!</p>
+
+<div class="row m-3">
+    <div class="col-md-12">
+        <a routerLink="/"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Back to Dashbord</a>
+    </div>
+    
+</div>
+
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"><i class="fa fa-user" aria-hidden="true"></i>Edit Coneiller</h4>
+                   <form #f="ngForm" (ngSubmit)="onSubmit()" >
+                    <div class="form-group">
+                        <label for="">nom:</label>
+                        <input type="text" 
+                         class="form-control"
+                         name="nom"
+                         [(ngModel)]="conseiller.nom"
+                         #conseillernom="ngModel"
+                        >
+                                                  
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">prenom:</label>
+                        <input type="text" 
+                         class="form-control"
+                         name="nom"
+                         [(ngModel)]="conseiller.prenom"
+                         #conseillerprenom="ngModel"
+                        >
+                                                  
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="">email:</label>
+                        <input type="text" 
+                         class="form-control"
+                         name="email"
+                         [(ngModel)]="conseiller.email"
+                         #conseilleremail="ngModel"
+                        >
+                                                  
+                    </div>
+                    <div class="form-group">
+                        <label for="">password:</label>
+                        <input type="text" 
+                         class="form-control"
+                         name="password"
+                         [(ngModel)]="conseiller.password"
+                         #conseillerpassword="ngModel"
+                        >
+                                                  
+                    </div>
+                    <div class="form-group">
+                        <label for="">telephone:</label>
+                        <input type="telephone" 
+                         class="form-control"
+                         name="telephone"
+                         [(ngModel)]="conseiller.telephone"
+                         #conseillertelephone="ngModel"
+                        >
+                                                  
+                    </div>
+                                 
+                        
+                    <button [disabled]="f.invalid" class="btn btn-danger mt-3">Update</button>
+                       
+                   </form>
+            </div>
+                        
+             </div>
+        </div>
+    </div>

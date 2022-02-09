@@ -17,4 +17,9 @@ export class OperationService {
   saveVirement(data:any){
     return this.http.post("http://localhost:8088/saveVirement",data)
   }
+
+  getCompteByNumCompte(id:any){
+    return this.http.get('http://localhost:8088/listoperationsByCompte/'+id);
+
+  }
 }

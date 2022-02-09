@@ -3,6 +3,10 @@ export interface Compte{
     solde?:number;
     dateCreation?:string;
     decouvert?:number;
-    operation?:[];
+    operations?:[{
+        idOperation?:number,
+        dateOperation?:string,
+        montant:number
+    }];
     
 }

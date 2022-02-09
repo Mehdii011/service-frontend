@@ -5,7 +5,7 @@
      </a>
     </div>
   </div>
-  
+
   <div class="card mt-3">
       <div class="card-body">
          <h4 class="card-title">List  Conseiller</h4>
@@ -16,7 +16,8 @@
                       <th>Clients</th>
                       <th>Detail</th>
                       <th>Update</th>
-  
+                      <th>Delete</th>
+
                   </tr>
                   </thead>
                   <tbody>
@@ -25,15 +26,18 @@
                           <td>
                             <a href="" class="btn btn-info"><i class="fa fa-info" ></i></a>
                         </td>
-                          
+
                           <td>
-                              <a href="" class="btn btn-info"><i class="fa fa-info" ></i></a>
+                              <a routerLink="/conseiller/detail/{{c.id}}" class="btn btn-info"><i class="fa fa-info" ></i></a>
                           </td>
                           <td>
-                              <a href="" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
+                              <a routerLink="/conseiller/edit/{{c.id}}"  class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
                           </td>
+                          <td>
+                            <a (click)="delete(c.id)" class="btn btn-danger"><i class="fa fa-trash" ></i></a>
+                        </td>
                       </tr>
-  
+
                   </tbody>
           </table>
       </div>

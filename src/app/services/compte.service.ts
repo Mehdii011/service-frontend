@@ -11,4 +11,8 @@ export class CompteService {
   getCompteById(id:any){
     return this.http.get('http://localhost:8088/compteClient/'+id);
   }
+  getCompteByNumCompte(id:any){
+    return this.http.get('http://localhost:8088/comptes/'+id);
+
+  }
 }

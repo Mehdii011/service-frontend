@@ -12,7 +12,7 @@ import { ConseillerService } from 'src/app/services/conseiller.service';
 export class AddConseillerComponent implements OnInit {
 
   conseiller:Conseiller={
-    
+
     nom:"",
     prenom:"",
     adresse:"",
@@ -20,11 +20,11 @@ export class AddConseillerComponent implements OnInit {
     email:"",
     password:""
   }
-  
+
   register:Register={
     username:"",
     password:""
-    
+
   }
 
   constructor( public conseillerSer:ConseillerService,public authSer:AuthentificationService) { }
@@ -38,15 +38,18 @@ export class AddConseillerComponent implements OnInit {
     this.register.username=this.conseiller.email;
     this.register.password=this.conseiller.password;
 
-   this.authSer.register(this.register);
+   this.authSer.register(this.register).subscribe(res1=>{
+     console.log(res1);
+
+   })
 
 
     this.conseillerSer.createConseiller(this.conseiller).subscribe(res=>{
       console.log(res);
     })
 
-    
+
   }
-  
+
 
 }

@@ -1,25 +1,25 @@
 <div class="row mt-3 mb-3">
     <div class="col-md-6 mt-3">
-      <h4>List Operations  </h4>
+      <h4>Listes Des  Operations Effectuer  </h4>
     </div>
     <!-- <div class="col-md-6 text-right">
        <button class="btn btn-primary" >
-           Nouveau Compte 
+           Nouveau Compte
        </button>
     </div> -->
 </div>
 <div class="row mt-5">
-    <div class="col-md-6" *ngFor="let c of operation ; let index = index" >
+    <div class="col-md-4" *ngFor="let c of operation ; let index = index" >
         <div class="card border-primary mb-3" style="max-width: mb-3" >
             <div class="card-header">Opration N° {{index +1 }} </div>
             <div class="card-body">
               <ul>
-              <li class="list-group-item"><strong>idOperation :</strong>{{c.idOperation}}</li>
-              <li class="list-group-item"><strong>dateOperation :</strong>{{c.dateOperation | date:'short' }}</li>
-              <li class="list-group-item"><strong>montant :</strong>{{c.montant}}</li>
-          
+              <li class="list-group-item"><strong>Id-Opération :</strong>{{c.idOperation}}</li>
+              <li class="list-group-item"><strong>Date-Opération :</strong>{{c.dateOperation | date:'short' }}</li>
+              <li class="list-group-item"><strong>Montant :</strong>{{c.montant}}</li>
+
               </ul>
-             
+
             </div>
           </div>
     </div>

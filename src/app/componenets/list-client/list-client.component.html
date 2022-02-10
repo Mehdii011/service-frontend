@@ -1,23 +1,24 @@
 <div class="row mt-5" >
   <div class="col-md-6">
    <a class="btn btn-success" routerLink="/clients/add">
-     <i class="fa fa-plus" > Nouveau Client </i>
+     <i class="fa fa-plus" > Nouveau-Client </i>
    </a>
   </div>
 </div>
 
-<div class="card mt-3">
-    <div class="card-body">
-       <h4 class="card-title">List  Clients</h4>
-        <table class="table table-striped">
+<div class="card mt-5 " *ngIf="this.isAdmin()" >
+    <div class="card-body ">
+       <h4 class="card-title">Listes des Clients</h4>
+        <table class="table table-striped" >
             <thead >
                 <tr>
-                    <th>Name</th>
-                    <th>Adress</th>
-                    <th>Compte</th>
-                    <th>Conseiller</th>
-                    <th>Detail</th>
-                    <th>Update</th>
+                    <th>NOM </th>
+                    <th>ADRESSE</th>
+                  <th>COMPTE-EXIST</th>
+                  <th>DETAIL-COMPTE</th>
+                    <th>CONSEILLER</th>
+                    <th>DETAIL-CLIENT</th>
+                    <th>MODIFICATION</th>
 
                 </tr>
                 </thead>
@@ -25,7 +26,9 @@
                     <tr *ngFor="let c of client">
                         <td scope="row">{{c.nom}}  {{c.prenom}}</td>
                         <td> {{c.adresse}}</td>
-                        <td>
+                      <td> </td>
+
+                      <td>
                             <a routerLink="/compte/detail/{{c.id}}" class="btn btn-success"><i class="fa fa-info" ></i></a>
                         </td>
                         <td>Anas</td>
@@ -34,11 +37,52 @@
                         </td>
                         <td>
                             <a href="" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
-                            
+
                         </td>
                     </tr>
 
                 </tbody>
         </table>
+
     </div>
+</div>
+<div class="card mt-5 " *ngIf="!isAdmin()" >
+  <div class="card-body ">
+    <h4 class="card-title">Listes des Clients</h4>
+    <table class="table table-striped" >
+      <thead >
+      <tr>
+        <th>NOM </th>
+        <th>ADRESSE</th>
+        <th>COMPTE-EXIST</th>
+        <th>DETAIL-COMPTE</th>
+        <th>CONSEILLER</th>
+        <th>DETAIL-CLIENT</th>
+        <th>MODIFICATION</th>
+
+      </tr>
+      </thead>
+      <tbody >
+      <tr *ngFor="let c of client1">
+        <td scope="row">{{c.nom}}  {{c.prenom}}</td>
+        <td> {{c.adresse}}</td>
+        <td> </td>
+
+        <td>
+          <a routerLink="/compte/detail/{{c.id}}" class="btn btn-success"><i class="fa fa-info" ></i></a>
+        </td>
+        <td>Anas</td>
+        <td>
+          <a href="" class="btn btn-info"><i class="fa fa-info" ></i></a>
+        </td>
+        <td>
+          <a href="" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
+
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+
+  </div>
 </div>

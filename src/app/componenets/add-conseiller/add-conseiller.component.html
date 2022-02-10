@@ -1,89 +1,82 @@
 
-<div class="row m-3">
-    <div class="col-md-12">
-        <a routerLink="/"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Back to Dashbord</a>
+<div class="row mt-5">
+    <div class="col-md-6 offset-3">
+      <a routerLink="/conseiller"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Revenir En Arrière</a>
     </div>
-    
+
 </div>
 
 <div class="row">
 
-    <div class="col-md-12">
-        <div class="card">
+    <div class="col-md-6 offset-3">
+        <div class="card mt-4">
             <div class="card-body">
-                <h4 class="card-title"><i class="fa fa-user" aria-hidden="true"></i>New Demande</h4>
+                <h4 class="card-title"><i class="fa fa-user" aria-hidden="true"></i>Nouveau-Conseiller</h4>
                    <form #f="ngForm" (ngSubmit)="onSubmit()" >
-                    <div class="form-group">
-                        <label for="">nom:</label>
-                        <input type="text" 
-                         class="form-control"
+                    <div class="form-group mt-3">
+                        <label for="">NOM  :</label>
+                        <input type="text"
+                         class="form-control mt-2"
                          name="nom"
                          [(ngModel)]="conseiller.nom"
                          #conseillernom="ngModel"
                         >
-                                                  
+
                     </div>
 
                     <div class="form-group">
-                        <label for="">prenom:</label>
-                        <input type="text" 
-                         class="form-control"
+                        <label for="">PRENOM:</label>
+                        <input type="text"
+                         class="form-control mt-2"
                          name="nom"
                          [(ngModel)]="conseiller.prenom"
                          #conseillerprenom="ngModel"
                         >
-                                                  
+
                     </div>
-                    
+
                     <div class="form-group">
-                        <label for="">email:</label>
-                        <input type="text" 
-                         class="form-control"
+                        <label for="">EMAIL:</label>
+                        <input type="text"
+                         class="form-control mt-2"
                          name="email"
                          [(ngModel)]="conseiller.email"
                          #conseilleremail="ngModel"
                         >
-                                                  
+
                     </div>
                     <div class="form-group">
-                        <label for="">password:</label>
-                        <input type="text" 
-                         class="form-control"
-                         name="password"
-                         [(ngModel)]="conseiller.password"
-                         #conseillerpassword="ngModel"
-                        >
-                                                  
+                      <label for="">MOT-DE-PASSE </label>
+                          <input type="text" class="form-control mt-2" name="password" [(ngModel)]="conseiller.password" #conseillerpassword="ngModel" >
                     </div>
+
                     <div class="form-group">
-                        <label for="">telephone:</label>
-                        <input type="telephone" 
-                         class="form-control"
+                        <label for="">TELEPHONE:</label>
+                        <input type="telephone"
+                         class="form-control mt-2"
                          name="telephone"
                          [(ngModel)]="conseiller.telephone"
                          #conseillertelephone="ngModel"
                         >
-                                                  
+
                     </div>
                     <div class="form-group">
-                        <label for="">Adresse:</label>
-                        <input type="telephone" 
-                         class="form-control"
+                        <label for="">ADRESSE:</label>
+                        <input type="telephone"
+                         class="form-control mt-2"
                          name="adresse"
                          [(ngModel)]="conseiller.adresse"
                          #conseilleradresse="ngModel"
                         >
-                                                  
+
                     </div>
+                     <div class="mt-2 text-center">
+                       <button [disabled]="f.invalid" class="btn btn-primary btn-lg mt-3">AJOUTER</button>
+                     </div>
 
-
-                   
-                        
-                    <button [disabled]="f.invalid" class="btn btn-primary mt-3">Submit</button>
-                       
                    </form>
             </div>
-                        
+
              </div>
         </div>
     </div>

@@ -72,9 +72,26 @@ export class AuthentificationService {
 
   logOut(){
     localStorage.removeItem('token');
-    localStorage.removeItem('Panier1')
     this.initParams();
 
+  }
+
+  decode(payload:any){
+    return JSON.parse(atob(payload))
+  }
+
+  payload(token:any){
+    const payload=token.split('.')[1]
+    console.log(payload)
+    return this.decode(payload)
+  }
+
+  getInfo(){
+    const token =this.getToken();
+    if(token){
+       const payload=this.payload(token);
+       return payload ? payload : null;
+    }
   }
 
   initParams(){

@@ -14,6 +14,9 @@ export class ClientService {
   getAll(){
   return  this.http.get(this.host2+"/clients");
   }
+  getByConseiller(id:any){
+    return  this.http.get(this.host2+"/clientByConseillerId/"+id);
+  }
 
   getClientById(id:any){
     return this.http.get('http://localhost:8088/clients/'+id);

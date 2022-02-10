@@ -1,20 +1,23 @@
-<div class="row">
-  <div class="col-md-12">
-    <a routerLink="/" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Back to dashbord</a>
+<div class="row mt-5">
+  <div class="col-md-6 offset-3">
+    <a routerLink="/conseiller" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Revenir En Arrière</a>
   </div>
   </div>
-<div class="card">
-  <div class="card-body">
+<div class="col-md-6 offset-3">
+  <div class="card mt-4 ">
+    <div class="card-body">
       <ul class="list-group">
-        <li class="list-group-item" >Id: <strong>{{cons.id}}</strong></li>
-        <li class="list-group-item" >Nom: <strong>{{cons.nom}}</strong></li>
-        <li class="list-group-item" >Prenom: <strong>{{cons.prenom}}</strong></li>
-        <li class="list-group-item" >Telephone: <strong>{{cons.telephone}}</strong></li>
-        <li class="list-group-item" >Email: <strong>{{cons.email}}</strong></li>
-        <li class="list-group-item" >Password: <strong>{{cons.password}}</strong></li>
+        <li class="list-group-item" >Id_Conseiller       :      <strong>  {{cons.id}}</strong></li>
+        <li class="list-group-item" >NOM      :   <strong>{{cons.nom}}</strong></li>
+        <li class="list-group-item" >PRENOM       : <strong>{{cons.prenom}}</strong></li>
+        <li class="list-group-item" >TELEPHONE:    <strong>{{cons.telephone}}</strong></li>
+        <li class="list-group-item" >EMAIL      : <strong>{{cons.email}}</strong></li>
+        <li class="list-group-item " >MOT-DE-PASSE     : <strong>{{cons.password}}</strong></li>
 
       </ul>
     </div>
+</div>
+
 
 
 </div>

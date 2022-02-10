@@ -24,4 +24,8 @@ export class ConseillerService {
   update(data:any){
     return this.http.put('http://localhost:8088/updateConseiller',data)
   }
+
+  getConseilleByemail(email: any) {
+    return this.http.get('http://localhost:8088/Employe/conseiller/'+email)
+  }
 }

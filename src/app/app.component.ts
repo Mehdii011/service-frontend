@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthentificationService } from './services/authentification.service';
+import {NavigationStart, Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,19 @@ import { AuthentificationService } from './services/authentification.service';
 export class AppComponent implements OnInit {
   title = 'banque-front';
   test:boolean=true;
+  public url: any;
 
-  constructor(){}
-  
+  constructor(public router:Router){}
+
   ngOnInit(): void {
- 
-  } 
- 
+    this.router.events.subscribe((val) => {
+      if(val instanceof NavigationStart){
+        this.url=val.url;
+        console.log(this.url)
+      }
+    } )
+
+  }
+
   }
 

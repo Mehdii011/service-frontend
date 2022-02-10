@@ -20,33 +20,36 @@ import { VersementComponent } from './componenets/versement/versement.component'
 import { VirementComponent } from './componenets/virement/virement.component';
 import {OperationComponent} from "./componenets/operation/operation.component";
 import { OperationDetailComponent } from './components/operation-detail/operation-detail.component';
+import {ClientIdConseillerComponent} from "./componenets/client-id-conseiller/client-id-conseiller.component";
+import {AuthGuardGuard} from "./guards/auth-guard.guard";
 
 const routes: Routes = [
   {path:"",redirectTo:'/clients',pathMatch:'full'},
   {path:"clients",children:[
-    {path:"",component:ListClientComponent},
-    {path:"edit/:id",component:UpdateClientComponent},
-    {path:"add",component:AddClientComponent},
-    {path:"detail/:id",component:DetailClientComponent},
+    {path:"",component:ListClientComponent,canActivate:[AuthGuardGuard]},
+    {path:"edit/:id",component:UpdateClientComponent,canActivate:[AuthGuardGuard]},
+    {path:"add",component:AddClientComponent,canActivate:[AuthGuardGuard]},
+      {path:"clientIdConseiller/:id",component:ClientIdConseillerComponent,canActivate:[AuthGuardGuard]},
+      {path:"detail/:id",component:DetailClientComponent,canActivate:[AuthGuardGuard]},
   ]},
   {path:"conseiller",children:[
-    {path:"",component:ListConseillerComponent},
-    {path:"edit/:id",component:UpdateConseillerComponent},
-    {path:"add",component:AddConseillerComponent},
-    {path:"detail/:id",component:DetailConseillerComponent},
+    {path:"",component:ListConseillerComponent,canActivate:[AuthGuardGuard]},
+    {path:"edit/:id",component:UpdateConseillerComponent,canActivate:[AuthGuardGuard]},
+    {path:"add",component:AddConseillerComponent,canActivate:[AuthGuardGuard]},
+    {path:"detail/:id",component:DetailConseillerComponent,canActivate:[AuthGuardGuard]},
   ]},
   {path:"compte",children:[
-    {path:"",component:ListCompteComponent},
-    {path:"edit/:id",component:UpdateCompteComponent},
-    {path:"add",component:AddCompteComponent},
-    {path:"detail/:id",component:DetailCompteComponent},
+    {path:"",component:ListCompteComponent,canActivate:[AuthGuardGuard]},
+    {path:"edit/:id",component:UpdateCompteComponent,canActivate:[AuthGuardGuard]},
+    {path:"add",component:AddCompteComponent,canActivate:[AuthGuardGuard]},
+    {path:"detail/:id",component:DetailCompteComponent,canActivate:[AuthGuardGuard]},
   ]},
   {path:"operation",children:[
-      {path:"",component:OperationComponent},
-      {path:"detail/:id",component:OperationDetailComponent},
-      {path:"virement",component:VirementComponent},
-      {path:"versement",component:VersementComponent},
-     {path:"retrait",component:RetraitComponent}
+      {path:"",component:OperationComponent,canActivate:[AuthGuardGuard]},
+      {path:"detail/:id",component:OperationDetailComponent,canActivate:[AuthGuardGuard]},
+      {path:"virement",component:VirementComponent,canActivate:[AuthGuardGuard]},
+      {path:"versement",component:VersementComponent,canActivate:[AuthGuardGuard]},
+     {path:"retrait",component:RetraitComponent,canActivate:[AuthGuardGuard]}
   ]},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},

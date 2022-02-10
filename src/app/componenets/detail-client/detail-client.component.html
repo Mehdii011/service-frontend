@@ -1,1 +1,25 @@
-<p>detail-client works!</p>
+<div class="row mt-5">
+  <div class="col-md-6 offset-3">
+    <a routerLink="/conseiller" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Revenir En Arrière</a>
+  </div>
+</div>
+<div class="col-md-6 offset-3">
+  <div class="card mt-4 ">
+    <div class="card-body">
+      <h4 class="card-title"><i class="fa fa-user" aria-hidden="true"></i>Detail-Client</h4>
+
+      <ul class="list-group">
+          <li class="list-group-item ">NOM : <strong>{{this.currentClient.nom}}</strong></li>
+        <li class="list-group-item ">PRENOM: <strong>{{this.currentClient.prenom}}</strong></li>
+        <li class="list-group-item ">ADRESSE : <strong>{{this.currentClient.adresse}}</strong></li>
+          <li class="list-group-item ">VILLE : <strong>{{this.currentClient.ville}}</strong></li>
+          <li class="list-group-item ">TELEPHONE : <strong>{{this.currentClient.telephone}}</strong></li>
+          <li class="list-group-item ">CODE-POSTAL  : <strong>{{this.currentClient.codePostal}}</strong></li>
+
+        </ul>
+
+
+  </div>
+
+</div>
+</div>

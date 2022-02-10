@@ -16,6 +16,7 @@ export class AuthentificationService {
   username: any;
   roles: any;
   jwt:any;
+  public log:boolean=true;
 
   constructor(private http:HttpClient) { }
 
@@ -38,7 +39,8 @@ export class AuthentificationService {
   }
 
   isAdmin(){
-    return this.roles.indexOf('ADMIN')>=0
+
+    return this.roles.indexOf('ADMIN')>=0;
 
   }
 

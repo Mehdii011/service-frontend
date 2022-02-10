@@ -25,6 +25,7 @@ import { DetailCompteComponent } from './componenets/detail-compte/detail-compte
 import { UpdateCompteComponent } from './componenets/update-compte/update-compte.component';
 import { AddCompteComponent } from './componenets/add-compte/add-compte.component';
 import { OperationDetailComponent } from './components/operation-detail/operation-detail.component';
+import { ClientIdConseillerComponent } from './componenets/client-id-conseiller/client-id-conseiller.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { OperationDetailComponent } from './components/operation-detail/operatio
     DetailCompteComponent,
     UpdateCompteComponent,
     AddCompteComponent,
-    OperationDetailComponent
+    OperationDetailComponent,
+    ClientIdConseillerComponent
   ],
   imports: [
     BrowserModule,

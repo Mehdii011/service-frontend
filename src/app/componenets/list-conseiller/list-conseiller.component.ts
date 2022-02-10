@@ -17,7 +17,7 @@ export class ListConseillerComponent implements OnInit {
   ngOnInit(): void {
     this.listConseiller1();
   }
-  
+
   listConseiller1(){
     this.conseillerSer.getAll().subscribe(res=>{
       return  this.conseiller=res as Conseiller[];
@@ -26,9 +26,9 @@ export class ListConseillerComponent implements OnInit {
 
   delete(id:any){
      this.conseillerSer.Detele(id).subscribe(res=>{
-      this.router.navigateByUrl('/')  
+      this.router.navigateByUrl('/conseiller')
        })
   }
-  
+
 
 }

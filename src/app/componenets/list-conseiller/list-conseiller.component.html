@@ -24,7 +24,7 @@
                       <tr *ngFor="let c of conseiller">
                           <td scope="row">{{c.nom}}  {{c.prenom}}</td>
                           <td>
-                            <a href="" class="btn btn-info"><i class="fa fa-info" ></i></a>
+                            <a routerLink="/clients/clientIdConseiller/{{c.id}}" class="btn btn-info"><i class="fa fa-info" ></i></a>
                         </td>
 
                           <td>

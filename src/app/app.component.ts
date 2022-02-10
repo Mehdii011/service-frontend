@@ -15,12 +15,7 @@ export class AppComponent implements OnInit {
   constructor(public router:Router){}
 
   ngOnInit(): void {
-    this.router.events.subscribe((val) => {
-      if(val instanceof NavigationStart){
-        this.url=val.url;
-        console.log(this.url)
-      }
-    } )
+
 
   }
 

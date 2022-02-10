@@ -26,14 +26,22 @@
                     <tr *ngFor="let c of client">
                         <td scope="row">{{c.nom}}  {{c.prenom}}</td>
                         <td> {{c.adresse}}</td>
-                      <td> </td>
+                      <td>
+                        <a routerLink="/compte/detail/{{c.id}}" class="btn btn-success"><i class="fa fa-check-circle" ></i></a>
+
+                      </td>
+                      <td>
+                        <a routerLink="/compte/detail/{{c.id}}" class="btn btn-success"><i class="fa fa-check-circle" ></i></a>
+                        <a routerLink="/compte/detail/{{c.id}}" class="btn btn-danger"><i class="fas fa-dot-circle"></i></a>
+
+                      </td>
 
                       <td>
-                            <a routerLink="/compte/detail/{{c.id}}" class="btn btn-success"><i class="fa fa-info" ></i></a>
+                            <a routerLink="/compte/detail/{{c.id}}" class="btn btn-info"><i class="fa fa-info" ></i></a>
                         </td>
-                        <td>Anas</td>
+                        <td>{{cons.prenom}}</td>
                         <td>
-                            <a href="" class="btn btn-info"><i class="fa fa-info" ></i></a>
+                            <a routerLink="/clients/detail/{{c.id}}" class="btn btn-info"><i class="fa fa-info" ></i></a>
                         </td>
                         <td>
                             <a href="" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
@@ -66,17 +74,20 @@
       <tr *ngFor="let c of client1">
         <td scope="row">{{c.nom}}  {{c.prenom}}</td>
         <td> {{c.adresse}}</td>
-        <td> </td>
+        <td>
+          <a routerLink="/compte/detail/{{c.id}}" class="btn btn-success"><i class="fa fa-check" ></i></a>
+          <a routerLink="/compte/detail/{{c.id}}" class="btn btn-danger"><i class="fas fa-dot-circle"></i></a>
+        </td>
 
         <td>
-          <a routerLink="/compte/detail/{{c.id}}" class="btn btn-success"><i class="fa fa-info" ></i></a>
+          <a routerLink="/compte/detail/{{c.id}}" class="btn btn-info"><i class="fa fa-info" ></i></a>
         </td>
-        <td>Anas</td>
+        <td>{{cons.prenom}}</td>
         <td>
-          <a href="" class="btn btn-info"><i class="fa fa-info" ></i></a>
+          <a routerLink="/clients/detail/{{c.id}}" class="btn btn-info"><i class="fa fa-info" ></i></a>
         </td>
         <td>
-          <a href="" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
+          <a routerLink="/" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
 
         </td>
       </tr>

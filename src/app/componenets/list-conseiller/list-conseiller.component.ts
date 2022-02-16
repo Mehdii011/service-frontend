@@ -20,13 +20,14 @@ export class ListConseillerComponent implements OnInit {
 
   listConseiller1(){
     this.conseillerSer.getAll().subscribe(res=>{
+      console.log(res)
       return  this.conseiller=res as Conseiller[];
     })
   }
 
   delete(id:any){
      this.conseillerSer.Detele(id).subscribe(res=>{
-      this.router.navigateByUrl('/conseiller')
+       this.router.navigate(['/conseiller' ]);
        })
   }
 

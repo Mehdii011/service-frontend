@@ -1,0 +1,89 @@
+
+<div class="row mt-5">
+  <div class="col-md-6 offset-3">
+    <a routerLink="/clients"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Revenir En Arrière</a>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-6 offset-3">
+    <div class="card mt-4">
+      <div class="card-body">
+        <h4 class="card-title"><i class="fa fa-user" aria-hidden="true"></i>Nouveau-Client</h4>
+        <form #f="ngForm" (ngSubmit)="onSubmit()" >
+          <div class="form-group mt-3">
+            <label for="">NOM  :</label>
+            <input type="text"
+                   class="form-control mt-2"
+                   name="nom"
+                   [(ngModel)]="client.nom"
+                   #clientnom="ngModel"
+            >
+
+          </div>
+
+          <div class="form-group">
+            <label for="">PRENOM:</label>
+            <input type="text"
+                   class="form-control mt-2"
+                   name="prenom"
+                   [(ngModel)]="client.prenom"
+                   #clientprenom="ngModel"
+            >
+
+          </div>
+
+          <div class="form-group">
+            <label for="">adresse:</label>
+            <input type="text"
+                   class="form-control mt-2"
+                   name="adresse"
+                   [(ngModel)]="client.adresse"
+                   #clientadresse="ngModel"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+            <label for="">TELEPHONE:</label>
+            <input type="text"
+                   class="form-control mt-2"
+                   name="telephone"
+                   [(ngModel)]="client.telephone"
+                   #clienttelephone="ngModel"
+            >
+
+          </div>
+          <div class="form-group">
+            <label for="">codePostal:</label>
+            <input type="number"
+                   class="form-control mt-2"
+                   name="codePostal"
+                   [(ngModel)]="client.codePostal"
+                   #clientcodePostal="ngModel"
+            >
+
+          </div>
+
+          <div class="form-group">
+            <label for="">ville:</label>
+            <input type="text"
+                   class="form-control mt-2"
+                   name="ville"
+                   [(ngModel)]="client.ville"
+                   #clientville="ngModel"
+            >
+
+          </div>
+          <div class="mt-2 text-center">
+            <button [disabled]="f.invalid" class="btn btn-primary btn-lg mt-3">AJOUTER</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

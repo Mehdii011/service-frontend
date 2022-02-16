@@ -1,0 +1,42 @@
+
+<div class="row mt-5">
+  <div class="col-md-12">
+    <a routerLink="/conseiller"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Revenir En Arrière</a>
+  </div>
+
+</div>
+<div class="row">
+  <div class="card mt-5 " >
+    <div class="card-body ">
+      <h4 class="card-title">Listes des Clients de Conseiller <b>{{conseiller.nom | uppercase}} {{conseiller.prenom | uppercase}}</b> </h4>
+      <table class="table table-striped mt-4" >
+        <thead >
+        <tr>
+          <th>ID </th>
+          <th>NOM </th>
+          <th>ADRESSE</th>
+          <th>DETAIL-COMPTE</th>
+          <th>CONSEILLER</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let c of client">
+          <td scope="row">{{c.id}} </td>
+          <td >{{c.nom}}  {{c.prenom}}</td>
+          <td> {{c.adresse}}</td>
+          <td>
+            <a routerLink="/compte/detail/{{c.id}}" class="btn btn-success"><i class="fa fa-check-circle" ></i></a>
+
+          </td>
+          <td>{{conseiller.nom | uppercase}} {{conseiller.prenom | uppercase}}</td>
+
+        </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>

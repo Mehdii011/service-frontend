@@ -1,1 +1,40 @@
-<p>update-client works!</p>
+<p>update client</p>
+
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #clientForm="ngForm">
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input type="text" class="form-control" id="id" disabled name="id" [(ngModel)]="client.id" required #id="ngModel" placeholder="Id" >
+      </div>
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" class="form-control" id="nom"  name="nom" [(ngModel)]="client.nom" required #nom="ngModel" placeholder="Nom" >
+      </div>
+
+      <div class="form-group">
+        <label for="nom">Prenom</label>
+        <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="client.prenom" required #prenom="ngModel"  placeholder="Prenom">
+      </div>
+      <div class="form-group">
+        <label for="adresse">Adresse</label>
+        <textarea class="form-control" [(ngModel)]="client.adresse" required #adresse="ngModel" name="adresse" id="adresse" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="nom">Code postal</label>
+        <input type="number" class="form-control" name="codePostal" id="codePostal" [(ngModel)]="client.codePostal" required #codePostal="ngModel"  placeholder="Code postal">
+      </div>
+      <div class="form-group">
+        <label for="nom">Ville</label>
+        <input type="text" class="form-control" id="ville" name="ville" [(ngModel)]="client.ville" required #ville="ngModel"  placeholder="Ville">
+      </div>
+      <div class="form-group">
+        <label for="nom">Téléphone</label>
+        <input type="text" class="form-control" name="telephone" id="telephone" [(ngModel)]="client.telephone" required #telephone="ngModel"  placeholder="Téléphone">
+      </div>
+
+
+      <button type="submit" class="btn btn-primary" [disabled]="!clientForm.form.valid">Suivant</button>
+    </form>
+  </div>
+</div>

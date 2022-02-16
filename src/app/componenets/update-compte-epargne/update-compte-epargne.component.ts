@@ -4,19 +4,19 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {CompteService} from "../../services/compte.service";
 
 @Component({
-  selector: 'app-update-compte',
-  templateUrl: './update-compte.component.html',
-  styleUrls: ['./update-compte.component.css']
+  selector: 'app-update-compte-epargne',
+  templateUrl: './update-compte-epargne.component.html',
+  styleUrls: ['./update-compte-epargne.component.css']
 })
-export class UpdateCompteComponent implements OnInit {
+export class UpdateCompteEpargneComponent implements OnInit {
 
   public id: any;
   public compte:Compte={
 
-    numeroCompte:0,
+    numeroCompte: 0,
     solde:0,
     dateCreation:" ",
-    decouvert: 0
+    taux: 0
 
   }
   constructor(private route: ActivatedRoute, private router: Router,private compteService: CompteService) {
@@ -27,7 +27,6 @@ export class UpdateCompteComponent implements OnInit {
 
     this.compteService.getCompteByNumCompte(this.id).subscribe(res=>{
       this.compte=res as Compte
-      console.log(this.compte)
 
     })
 
@@ -35,15 +34,12 @@ export class UpdateCompteComponent implements OnInit {
 
   onSubmit(){
     this.compte.id= this.id;
-    // @ts-ignore
-    this.compte.operations=[]
-    this.compteService.updatecomptecourant(this.compte).subscribe(res=>{
+    console.log(this.compte)
+    this.compteService.updatecompteEpargne(this.compte).subscribe(res=>{
       console.log(res)
       this.router.navigateByUrl('/clients')
 
     })
 
   }
-
-
 }

@@ -1,0 +1,42 @@
+<div class="row mt-5"></div>
+<div class="row mt-5"></div>
+<div class="row mt-5 mb-3">
+  <div class="col-md-6 offset-3">
+    <a routerLink="/clients"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Revenir En Arrière</a>
+  </div>
+
+  </div>
+  <div class="card col-md-6 offset-3">
+    <div class="card-header">
+      <h3 class="text-center ">Affectation Client_Conseiller</h3> </div>
+    <div  class="card-body col-md-6 offset-3 mt-5">
+      <form #f="ngForm" (ngSubmit)="onSubmit()" >
+
+        <div class="form-group mt-3">
+          <label for="">IdConseiller  :</label>
+          <input type="text"
+                 class="form-control mt-2"
+                 name="idConseiller"
+                 [(ngModel)]="conseiller1.idConseiller"
+                 #conseiller1idConseiller="ngModel"
+          >
+        </div>
+        <div class="form-group mt-3">
+          <label for="">IdClient  :</label>
+          <input type="text"
+                 class="form-control mt-2"
+                 name="idClient"
+                 [(ngModel)]="conseiller1.idClient"
+                 #conseiller1idClient="ngModel"
+          >
+
+        </div>
+        <div class="mt-2 text-center">
+          <button [disabled]="f.invalid" class="btn btn-primary btn-lg mt-3">Affecter</button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+

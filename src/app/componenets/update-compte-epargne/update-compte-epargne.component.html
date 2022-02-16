@@ -7,7 +7,7 @@
 </div>
 <div class="card col-md-6 offset-3 mt-4">
   <div class="card-body">
-    <h4 class="card-title"><i class="fa fa-user" aria-hidden="true"></i>Modification-Compte-Courant</h4>
+    <h4 class="card-title"><i class="fa fa-user" aria-hidden="true"></i>Modification-Compte-Epargne</h4>
     <form (ngSubmit)="onSubmit()" #compteForm="ngForm">
       <div class="form-group">
         <label for="numeroCompte">numeroCompte</label>
@@ -23,10 +23,9 @@
         <input type="date" class="form-control" [(ngModel)]="compte.dateCreation" required #dateCreation="ngModel" name="dateCreation" id="dateCreation" >
       </div>
 
-
       <div class="form-group">
-        <label for="decouvert">decouvert</label>
-        <input type="number" step="any" class="form-control" name="decouvert" id="decouvert" [(ngModel)]="compte.decouvert" required #decouvert="ngModel"  placeholder="decouvert">
+        <label for="taux">Taux</label>
+        <input type="number" step="any" class="form-control" name="taux" id="taux" [(ngModel)]="compte.taux" required #taux="ngModel"  placeholder="taux">
       </div>
 
 

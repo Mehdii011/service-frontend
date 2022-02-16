@@ -22,7 +22,18 @@ export class ClientService {
   getClientById(id:any){
     return this.http.get('http://localhost:8088/clients/'+id);
   }
-  /*getCl(id:number):Observable<any>{
-    return this.http.get(this.host2+"/clients/");
-  }*/
+  getOne(id:any){
+    return  this.http.get(this.host2+"/clients/"+id);
+  }
+
+  save(data: any) {
+    return this.http.post("http://localhost:8088/client", data);
+
+  }
+  update(client:any){
+    return this.http.put('http://localhost:8088/editclient',client)
+  }
+  Detele(id:any){
+    return this.http.get('http://localhost:8088/destroyclient/'+id)
+  }
 }

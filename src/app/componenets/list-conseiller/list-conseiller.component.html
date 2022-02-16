@@ -12,7 +12,8 @@
           <table class="table table-striped">
               <thead >
                   <tr>
-                      <th>NOM </th>
+                    <th>ID </th>
+                    <th>NOM </th>
                       <th>CLIENTS</th>
                       <th>DETAILS</th>
                       <th>MODIFICATION</th>
@@ -22,6 +23,7 @@
                   </thead>
                   <tbody>
                       <tr *ngFor="let c of conseiller">
+                        <td>{{c.id}}</td>
                           <td scope="row">{{c.nom}}  {{c.prenom}}</td>
                           <td>
                             <a routerLink="/clients/clientIdConseiller/{{c.id}}" class="btn btn-info"><i class="fa fa-info" ></i></a>

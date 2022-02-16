@@ -22,6 +22,10 @@ import {OperationComponent} from "./componenets/operation/operation.component";
 import { OperationDetailComponent } from './components/operation-detail/operation-detail.component';
 import {ClientIdConseillerComponent} from "./componenets/client-id-conseiller/client-id-conseiller.component";
 import {AuthGuardGuard} from "./guards/auth-guard.guard";
+import {DetailCompteBComponent} from "./componenets/detail-compte-b/detail-compte-b.component";
+import {AffectationComponent} from "./componenets/affectation/affectation.component";
+import {AddCompteEpargneComponent} from "./componenets/add-compte-epargne/add-compte-epargne.component";
+import {UpdateCompteEpargneComponent} from "./componenets/update-compte-epargne/update-compte-epargne.component";
 
 const routes: Routes = [
   {path:"",redirectTo:'/clients',pathMatch:'full'},
@@ -30,6 +34,7 @@ const routes: Routes = [
     {path:"edit/:id",component:UpdateClientComponent,canActivate:[AuthGuardGuard]},
     {path:"add",component:AddClientComponent,canActivate:[AuthGuardGuard]},
       {path:"clientIdConseiller/:id",component:ClientIdConseillerComponent,canActivate:[AuthGuardGuard]},
+      {path:"affectation",component:AffectationComponent,canActivate:[AuthGuardGuard]},
       {path:"detail/:id",component:DetailClientComponent,canActivate:[AuthGuardGuard]},
   ]},
   {path:"conseiller",children:[
@@ -41,9 +46,13 @@ const routes: Routes = [
   {path:"compte",children:[
     {path:"",component:ListCompteComponent,canActivate:[AuthGuardGuard]},
     {path:"edit/:id",component:UpdateCompteComponent,canActivate:[AuthGuardGuard]},
-    {path:"add",component:AddCompteComponent,canActivate:[AuthGuardGuard]},
-    {path:"detail/:id",component:DetailCompteComponent,canActivate:[AuthGuardGuard]},
-  ]},
+      {path:"editEpargne/:id",component:UpdateCompteEpargneComponent,canActivate:[AuthGuardGuard]},
+      {path:"add/:id",component:AddCompteComponent,canActivate:[AuthGuardGuard]},
+      {path:"add/compteepargne/:client",component:AddCompteEpargneComponent,canActivate:[AuthGuardGuard]},
+      {path:"detail/:id",component:DetailCompteComponent,canActivate:[AuthGuardGuard]},
+      {path:"details/:num",component:DetailCompteBComponent,canActivate:[AuthGuardGuard]},
+
+    ]},
   {path:"operation",children:[
       {path:"",component:OperationComponent,canActivate:[AuthGuardGuard]},
       {path:"detail/:id",component:OperationDetailComponent,canActivate:[AuthGuardGuard]},

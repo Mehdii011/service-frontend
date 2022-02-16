@@ -1,1 +1,46 @@
-<p>list-compte works!</p>
+<div class="row mt-5" >
+  <div class="col-md-6">
+
+  </div>
+</div>
+
+<div class="card mt-3">
+  <div class="card-body">
+    <h4 class="card-title">Liste des comptes</h4>
+    <table class="table table-striped">
+      <thead >
+      <tr>
+        <th>Numero du compte</th>
+        <th>Solde</th>
+        <th>Date de creation</th>
+        <th>Details</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
+
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let c of compte">
+        <td scope="row">{{c.numeroCompte}} </td><td> {{c.solde}}</td>
+        <td> {{c.dateCreation}}</td>
+
+
+        <td >
+          <a  routerLink="/compte/details/{{c.numeroCompte}}"  class="btn btn-info"><i class="fa fa-info" ></i></a>
+        </td>
+        <td>
+          <a  *ngIf="!c.taux" routerLink="/compte/edit/{{c.numeroCompte}}" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
+          <a *ngIf="!c.decouvert" routerLink="/compte/editEpargne/{{c.numeroCompte}}" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
+
+
+        </td>
+        <td>
+          <a  (click)="deleteCompte(c.numeroCompte)"  class="btn btn-danger"><i class="fa fa-trash" ></i></a>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

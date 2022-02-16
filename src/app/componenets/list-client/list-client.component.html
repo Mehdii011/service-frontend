@@ -4,6 +4,11 @@
      <i class="fa fa-plus" > Nouveau-Client </i>
    </a>
   </div>
+  <div class="col-md-6" *ngIf="this.auth.isAdmin()">
+    <a class="btn btn-success" routerLink="/clients/affectation">
+      <i class="fa fa-plus" > Affectation-Client-Conseiller </i>
+    </a>
+  </div>
 </div>
 
 <div class="card mt-5 " *ngIf="this.isAdmin()" >
@@ -12,41 +17,25 @@
         <table class="table table-striped" >
             <thead >
                 <tr>
-                    <th>NOM </th>
+                  <th>ID</th>
+                  <th>NOM </th>
                     <th>ADRESSE</th>
-                  <th>COMPTE-EXIST</th>
                   <th>DETAIL-COMPTE</th>
-                    <th>CONSEILLER</th>
-                    <th>DETAIL-CLIENT</th>
-                    <th>MODIFICATION</th>
+
 
                 </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let c of client">
-                        <td scope="row">{{c.nom}}  {{c.prenom}}</td>
+                      <td scope="row">{{c.id}}</td>
+                      <td scope="row">{{c.nom}}  {{c.prenom}}</td>
                         <td> {{c.adresse}}</td>
-                      <td>
-                        <a routerLink="/compte/detail/{{c.id}}" class="btn btn-success"><i class="fa fa-check-circle" ></i></a>
-
-                      </td>
-                      <td>
-                        <a routerLink="/compte/detail/{{c.id}}" class="btn btn-success"><i class="fa fa-check-circle" ></i></a>
-                        <a routerLink="/compte/detail/{{c.id}}" class="btn btn-danger"><i class="fas fa-dot-circle"></i></a>
-
-                      </td>
 
                       <td>
                             <a routerLink="/compte/detail/{{c.id}}" class="btn btn-info"><i class="fa fa-info" ></i></a>
                         </td>
-                        <td>{{cons.prenom}}</td>
-                        <td>
-                            <a routerLink="/clients/detail/{{c.id}}" class="btn btn-info"><i class="fa fa-info" ></i></a>
-                        </td>
-                        <td>
-                            <a href="" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
 
-                        </td>
+
                     </tr>
 
                 </tbody>
@@ -60,34 +49,38 @@
     <table class="table table-striped" >
       <thead >
       <tr>
+        <th>ID </th>
         <th>NOM </th>
         <th>ADRESSE</th>
-        <th>COMPTE-EXIST</th>
         <th>DETAIL-COMPTE</th>
-        <th>CONSEILLER</th>
-        <th>DETAIL-CLIENT</th>
-        <th>MODIFICATION</th>
+        <th>Conseiller</th>
+        <th>Ajoute-Compte-Epargne</th>
+        <th>MODIFIER</th>
+        <th>SUPPRIMER</th>
 
       </tr>
       </thead>
       <tbody >
       <tr *ngFor="let c of client1">
-        <td scope="row">{{c.nom}}  {{c.prenom}}</td>
+        <td scope="row">{{c.id}}</td>
+        <td >{{c.nom}}  {{c.prenom}}</td>
         <td> {{c.adresse}}</td>
-        <td>
-          <a routerLink="/compte/detail/{{c.id}}" class="btn btn-success"><i class="fa fa-check" ></i></a>
-          <a routerLink="/compte/detail/{{c.id}}" class="btn btn-danger"><i class="fas fa-dot-circle"></i></a>
-        </td>
-
         <td>
           <a routerLink="/compte/detail/{{c.id}}" class="btn btn-info"><i class="fa fa-info" ></i></a>
         </td>
         <td>{{cons.prenom}}</td>
+        <td >
+          <a *ngIf="c.comptes.length<2" routerLink="/compte/add/compteepargne/{{c.id}}" class="btn btn-info"><i class="fa fa-plus" ></i></a>
+          <a *ngIf="c.comptes.length>=2" class="btn btn-outline-success"><i class="fa fa-check" ></i></a>
+
+        </td>
+
         <td>
-          <a routerLink="/clients/detail/{{c.id}}" class="btn btn-info"><i class="fa fa-info" ></i></a>
+          <a routerLink="/clients/edit/{{c.id}}" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
+
         </td>
         <td>
-          <a routerLink="/" class="btn btn-warning"><i class="fa fa-pencil" ></i></a>
+          <a (click)="deleteClient(c.id)"   class="btn btn-danger"><i class="fa fa-trash" ></i></a>
 
         </td>
       </tr>

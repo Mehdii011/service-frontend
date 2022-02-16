@@ -1,0 +1,27 @@
+<div class="row mt-5 mb-3">
+  <div class="col-md-6 offset-3">
+    <h4>Detail de Compte N° {{compte.numeroCompte}}  </h4>
+      <a routerLink="/compte"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Revenir En Arrière</a>
+  </div>
+  <div class="col-md-6 text-right">
+
+  </div>
+
+</div>
+<div class="row mt-5 ">
+  <div class="col-md-6 offset-3" >
+    <div class="card border-primary mb-3" style="max-width: mb-3" >
+      <div class="card-header">Compte  </div>
+      <div class="card-body col-md-10 offset-1">
+        <ul>
+          <li class="list-group-item"><strong>Numéro de Compte     :</strong>{{compte.numeroCompte}}</li>
+          <li class="list-group-item"><strong>Solde :</strong>{{compte.solde}}</li>
+          <li class="list-group-item"><strong>Date de Creation :</strong>{{compte.dateCreation}}</li>
+          <li class="list-group-item"><strong>Decouvert :</strong>{{compte.decouvert}}</li>
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>

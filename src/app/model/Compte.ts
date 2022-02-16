@@ -1,12 +1,11 @@
 export interface Compte{
-    numeroCompte?:number;
-    solde?:number;
+  id?:number
+   numeroCompte?:number;
+  solde?:number;
     dateCreation?:string;
-    decouvert?:number;
-    operations?:[{
-        idOperation?:number,
-        dateOperation?:string,
-        montant:number
-    }];
-    
+  decouvert?:number;
+    operations?:any
+    client?:any
+  taux?:number
+
 }

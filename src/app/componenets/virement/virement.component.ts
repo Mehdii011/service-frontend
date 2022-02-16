@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Operation } from 'src/app/model/operation';
 import { OperationService } from 'src/app/services/operation.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-virement',
@@ -22,12 +23,29 @@ export class VirementComponent implements OnInit {
   }
 
   onSubmit() {
-     this.oprationSer.saveVirement(this.operation).subscribe(res=>{
-       return this.route.navigate(['/']);
+    Swal.fire({
+      title: 'Voulez-vous valider le virement?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Valider',
+      denyButtonText: `Refuser`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        this.oprationSer.saveVirement(this.operation).subscribe(res=>{
+          console.log(res)
 
-     },err=>{
-       console.log(err)
-     })
+          this.route.navigate(['/operation']);
+
+        },err=>{
+          console.log(err)
+        })
+        Swal.fire('Enregistré!', '', 'success')
+      } else if (result.isDenied) {
+        Swal.fire('Les modifications ne sont pas enregistrées', '', 'info')
+      }
+    })
+
   }
 
 }

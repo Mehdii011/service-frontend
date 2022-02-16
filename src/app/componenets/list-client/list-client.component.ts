@@ -5,6 +5,7 @@ import {AuthentificationService} from "../../services/authentification.service";
 import {ConseillerService} from "../../services/conseiller.service";
 import {Conseiller} from "../../model/Conseiller";
 import {NavigationStart, Router} from "@angular/router";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-list-client',
@@ -26,7 +27,7 @@ export class ListClientComponent implements OnInit {
   public test1: any;
   public url: any;
 
-  constructor(private router:Router,public clientSer:ClientService,public auth:AuthentificationService,public conseillerSer:ConseillerService) { }
+  constructor(private router:Router,public clientSer:ClientService,public auth:AuthentificationService,public conseillerSer:ConseillerService,private route:Router) { }
 
   ngOnInit(): void {
     this.auth.log=false;
@@ -52,8 +53,8 @@ export class ListClientComponent implements OnInit {
 
       this.client=res as Client[]
       this.client.forEach(a=>{
-        if(a.compte===null)
-         this.test=false
+        if(a.comptes>=2)
+         this.test=true
       })
 
     })
@@ -69,6 +70,7 @@ export class ListClientComponent implements OnInit {
       })
       this.conseillerSer.getConseiller(this.conseiller.id).subscribe(res4=>{
         this.cons=res4 as Conseiller
+        console.log(this.cons)
       })
 
     })
@@ -82,5 +84,27 @@ export class ListClientComponent implements OnInit {
   }
 
 
+  deleteClient(id:any) {
+    Swal.fire({
+      title: 'Voulez-vous valider le virement?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Valider',
+      denyButtonText: `Refuser`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        this.clientSer.Detele(id).subscribe(res8=>{
+          this.route.navigate(['/conseiller']);
 
+        })
+        Swal.fire('Enregistré!', '', 'success')
+
+      } else if (result.isDenied) {
+        Swal.fire('Les modifications ne sont pas enregistrées', '', 'info')
+      }
+    })
+    this.route.navigate(['/clients']);
+
+  }
 }

@@ -5,10 +5,10 @@ export interface Client{
   prenom?: string;
   adresse?: string;
   codePostal?: number;
-  compte?: any;
+  comptes?: any;
   cartes?: any;
   ville?: string;
   telephone?: any;
-  password?: string
+
 
 }

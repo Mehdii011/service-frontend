@@ -3,6 +3,7 @@ import { Conseiller } from 'src/app/model/Conseiller';
 import { Register } from 'src/app/model/Register';
 import { AuthentificationService } from 'src/app/services/authentification.service';
 import { ConseillerService } from 'src/app/services/conseiller.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-conseiller',
@@ -27,7 +28,7 @@ export class AddConseillerComponent implements OnInit {
 
   }
 
-  constructor( public conseillerSer:ConseillerService,public authSer:AuthentificationService) { }
+  constructor( public conseillerSer:ConseillerService,public authSer:AuthentificationService,private router:Router) { }
 
   ngOnInit(): void {
 
@@ -47,6 +48,7 @@ export class AddConseillerComponent implements OnInit {
     this.conseillerSer.createConseiller(this.conseiller).subscribe(res=>{
       console.log(res);
     })
+    this.router.navigate(['/conseiller']);
 
 
   }
